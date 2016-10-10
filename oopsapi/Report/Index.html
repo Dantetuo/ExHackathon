@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Event Listing</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#btnShow").click(function () {
+                var options = {};
+                options.url = "../oopsapi/api/oopsapi/getalloops";
+                options.type = "GET";
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    $("#imgContainer").empty();
+                    $("#imgContainer").append("<li>Event Type</li>")
+                    for (var i = 0; i < results.length; i++) {
+                        $("#imgContainer").append("<li>" + results[i] + "</li>");
+                    }
+
+                };
+                options.error = function (err) { alert(err.statusText); };
+                $.ajax(options);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <form id="form1">
+        <br />
+        <br />
+        <input type="button" id="btnShow" value="Show" />
+        <br />
+        <br />
+
+        <div id="imgContainer"></div>
+
+    </form>
+</body>
+</html>
