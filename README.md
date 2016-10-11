@@ -1,4 +1,5 @@
 
+
   # ExHackathon
 
 Rasberry Pi project to will take external events (motion, sound, light) and take those events and post them to a web api
@@ -13,8 +14,9 @@ Hardware:
 Software:
   Communication
   api post
+    PUT
     http://lwaldtech.com/oopsapi/api/oopsapi/insertoops
-    
+    GET
     https://lwaldtech.com/oopsapi/api/oopsapi/getalloops
     
     
